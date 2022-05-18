@@ -7,7 +7,12 @@
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control"  name="title">
+                    <select name="title" class="p-1">
+                        <option value="select">select</option>
+                        <option value="mr">Mr.</option>
+                        <option value="mrs">Mrs.</option>
+                        <option value="miss">Miss</option>
+                    </select>
                 </div>
 
                 <div class="mb-3">

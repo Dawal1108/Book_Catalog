@@ -15,7 +15,7 @@ class BookTableSeeder extends Seeder
     public function run()
     {
         //
-        \App\Models\BookCatalog::factory(200)->create();
+        \App\Models\BookCatalog::factory(20)->create();
         // BookCatalog::factory(200)->create();
     }
 }

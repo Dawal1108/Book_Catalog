@@ -31,7 +31,7 @@
                     <input type="text" class="form-control" value="{{ $books->address }}" name="address">
                 </div>
 
-                <button type="submit" class="btn btn-primary">create</button>
+                <button type="submit" class="btn btn-primary">edit</button>
             </form>
         </div>
     </div>

@@ -40,7 +40,7 @@ class BookController extends Controller
         $books->address = $request->address;
         $books->save();
 
-        return redirect('index');
+        return redirect('index')->with('success', 'New record created');
     }
 
     public function edit($id){
@@ -67,12 +67,12 @@ class BookController extends Controller
         $books->address = $request->address;
         $books->save();
 
-        return redirect('index');
+        return redirect('index')->with('success','Record was updated');
     }
 
     public function delete($id){
         $books = BookCatalog::find($id);
         $books->delete();
-        return redirect('index');
+        return redirect('index')->with('info','Record was deleted');
     }
 }
