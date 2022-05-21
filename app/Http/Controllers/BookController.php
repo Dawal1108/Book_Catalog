@@ -51,4 +51,7 @@ class BookController extends Controller
         $books->delete();
         return redirect('index')->with('info','Record was deleted');
     }
+    public function noAccess(){
+        return view('noaccess');
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // =============== INDEX ROUTE ==============
-Route::get('/index', 'BookController@index');
+Route::get('/index', 'BookController@index')->Middleware('CustomAuth');
 
 // =============== CREATE ROUTE ==============
 Route::get('/create', 'BookController@create');
@@ -26,3 +27,15 @@ Route::post('/edit/{id}', 'BookController@update');
 
 // =============== DELETE ROUTE ==============
 Route::get('/delete/{id}', 'BookController@delete');
+
+// =============== RESTRICTION ROUTE ==============
+Route::get('/noaccess', 'BookController@noAccess')->name('noaccess');
+
+// Route::middleware(['restricted'])->group(function(){
+//     // =============== CREATE ROUTE ==============
+//     Route::get('/create', 'BookController@create');
+//     Route::post('/create', 'BookController@store');
+// });
+
+Route::get('/create', 'BookController@create');
+Route::post('/create', 'BookController@store');
